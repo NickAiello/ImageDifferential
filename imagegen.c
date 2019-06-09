@@ -20,7 +20,7 @@ int main(int argc, char* argv[]){
 	FILE *f2;
 	FILE *out;
 	int n,m,i,offset;
-	offset = 1078;
+	offset = 29;
 
 	f1 = fopen(file1,"rb");
 	f2 = fopen(file2, "rb");
@@ -42,7 +42,7 @@ int main(int argc, char* argv[]){
 			break;
 		}
 		for(i=0;i<n;i++){
-			buf1[i] = buf1[i] & buf2[i];
+			buf1[i] = buf1[i] ^ buf2[i];
 		}
 		if (n>m){
 			fwrite(buf1,1,m,out);
