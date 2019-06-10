@@ -1,16 +1,19 @@
 from PIL import Image
 
-source = Image.open('pizza.tif')
+name = 'monkey'
+ftype = '.jpg'
+
+source = Image.open(name+ftype)
 base = source
 base.convert('RGB')
-base.save('pizza-base.bmp')
+base.save(name+'-base.bmp')
 
 bw = base
 bw = bw.convert('L')
 bw = bw.convert('RGB')
-bw.save('pizza-bw.bmp')
+bw.save(name+'-bw.bmp')
 
-rgba = base
-rgba = rgba.convert('RGBA')
-rgba = rgba.convert('RGB')
-rgba.save('pizza-rgba.bmp')
+dither = base
+dither = dither.convert('1')
+dither = dither.convert('RGB')
+dither.save(name+'-dither.bmp')
