@@ -59,7 +59,7 @@ int main(int argc, char* argv[]){
 			//get # of bytes same / diff
 			if (buf1[i] == buf2[i]){
 				sameBytes++; 
-				printf("%ld:(%ld) %d==%d\n",ftell(f1)-n+i,totalBytes+i+1,buf1[i],buf2[i]);
+				//printf("%ld:(%ld) %d==%d\n",ftell(f1)-n+i,totalBytes+i+1,buf1[i],buf2[i]);
 			}
 			else { diffBytes++; }
 			//get the # of bits same / diff

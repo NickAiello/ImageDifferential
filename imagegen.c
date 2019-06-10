@@ -43,7 +43,11 @@ int main(int argc, char* argv[]){
 			break;
 		}
 		for(i=0;i<n;i++){
-			buf1[i] = buf1[i] ^ buf2[i];
+			if (buf1[i] >= buf2[i]){
+				buf1[i] = buf1[i] - buf2[i];
+			} else {
+				buf1[i] = 0b00000000;
+			}
 		}
 		if (n>m){
 			fwrite(buf1,1,m,out);
