@@ -20,8 +20,9 @@ int main(int argc, char* argv[]){
 	FILE *f2;
 	FILE *out;
 	int n,m,i,offset;
-	offset = 29;
-
+	unsigned char offsetDetector[4];
+	offset = 54;
+	
 	f1 = fopen(file1,"rb");
 	f2 = fopen(file2, "rb");
 	out = fopen(file3, "wb");
@@ -50,7 +51,15 @@ int main(int argc, char* argv[]){
 			fwrite(buf1,1,n,out);
 		}
 	}
-
+	//Testing to make sure the first byte of pixel data is at offset 54
+	// int negSeek = -1;
+	// fseek(out,negSeek-1,SEEK_END);
+	// char bufzero[1];
+	// bufzero[0] = bufzero[1] = bufzero[2] = 255;
+	// for (i=negSeek;i<0;i++){
+	// 	n= fwrite(bufzero,1,sizeof(bufzero),out);
+	// }
+		
 	//close files
 	fclose(f1);
 	fclose(f2);
